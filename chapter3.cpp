@@ -62,9 +62,9 @@ std::string bool_to_string(bool x) {
 // Print method that assumes every position
 // defines if its a prime number.
 template <RandomAccessIterator I, Integer N>
-void print_primes(I first, N n, N step_size) {
+void print_primes(I first, N n, N step_size, N offSetPrint) {
     auto last = first + n;
-    unsigned int index = 1;
+    unsigned int index = offSetPrint;
     unsigned int batch_size = 10;
 
     while (first < last) {
@@ -100,7 +100,6 @@ int main() {
     std::cout << "such as 6,9,12,... " << std::endl;
     const unsigned int mark_sieve_test_vector_size = 100;
     auto mark_sieve_test_vector = std::vector<bool>();
-    mark_sieve_test_vector.reserve(mark_sieve_test_vector_size);
 
     for (int i = 0; i < mark_sieve_test_vector_size; i++) {
         mark_sieve_test_vector.push_back(true);
@@ -108,15 +107,17 @@ int main() {
     mark_sieve(mark_sieve_test_vector.begin() + 5, mark_sieve_test_vector.end(),
                3);
     print_primes(mark_sieve_test_vector.begin(), mark_sieve_test_vector_size,
-                 step_size_1);
+                 step_size_1, (unsigned int)1);
 
-    std::cout << std::endl << "sift0" << std::endl;
+    std::cout << std::endl
+              << "sift0, the number 2 is left out here" << std::endl;
     sift0(is_prime_number.begin(), size);
-    print_primes(is_prime_number.begin(), (size / step_size_1, step_size_1);
+    print_primes(is_prime_number.begin(), size, step_size_2, (unsigned int)3);
 
-    std::cout << std::endl << "sift1" << std::endl;
+    std::cout << std::endl
+              << "sift1, the number 2 is left out here" << std::endl;
     sift1(is_prime_number.begin(), size);
-    print_primes(is_prime_number.begin(), size / step_size_2, step_size_2);
+    print_primes(is_prime_number.begin(), size, step_size_2, (unsigned int)3);
 
     std::cout << "End of program!" << std::endl << std::flush;
 }

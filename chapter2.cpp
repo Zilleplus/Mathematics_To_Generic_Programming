@@ -44,7 +44,7 @@ int mult_acc2(int r, int n,int a){
     return mult_acc2(r,half(n),a+a);
 }
 
-// A strictly recursive function is onein which all the tail-
+// A strictly recursive function is one in which all the tail-
 // recursive calls are done with th formal parameters of the
 // procedure being the corresponding arguments.
 // n is rarely 1 so:
