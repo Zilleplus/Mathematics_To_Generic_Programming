@@ -90,6 +90,7 @@ line_segment largest_doubling(line_segment a, line_segment b) {
     return b;
 }
 
+// a mod b
 line_segment remainder(line_segment a, line_segment b) {
     // precondition: b!=0
     if (a < b) return a;
@@ -119,6 +120,64 @@ integer quotient(line_segment a, line_segment b) {
     return n;
 }
 
+// Efficient remainder and quotient algo
+std::pair<integer, line_segment> quotient_remainder(line_segment a,
+                                                    line_segment b) {
+    // Precodition: b > 0
+    if (a < b) return {integer(0), a};
+    line_segment c = largest_doubling(a, b);
+    integer n(1);
+    a = a - c;
+    while (c != b) {
+        c = half(c);
+        n = n + n;
+        if (c <= a) {
+            a = a - c;
+            n = n + 1;
+        }
+    }
+    return {n, a};
+}
+
+// Special algo that does not use the half method.
+line_segment remainder_fibonacci(line_segment a, line_segment b) {
+    // Precodition: b > 0
+    if (a < b) return a;
+    line_segment c = b;
+    do {
+        line_segment temp = c;
+        c = b + c;
+        b = tmp;
+    } while (a > = c);
+    do {
+        if (a <= b) {
+            a = a - b;
+        }
+        line_segment tmp = c = b;
+        c = b;
+        b = tmp;
+    } while (b < c);
+    return a;
+}
+
+line_segment gcm_remainder(line_segment a, line_segment b){
+    while(b!=line_segment(0)){
+        a = remainder(a,b);
+        std::swap(a,b);
+    }
+
+    return a;
+}
+
+line_segment gcm(integer a, integer b){
+    while(b!=integer(0)){
+        a = a % b;
+        std::swap(a,b);
+    }
+
+    return a;
+}
+
 int main() {
     std::cout << "Chapter4" << std::endl;
     line_segment test1 = 14;
@@ -139,5 +198,5 @@ int main() {
               << std::to_string(remainder(test2, test1)) << std::endl;
     std::cout << "quotient a=" << std::to_string(test2)
               << " b=" << std::to_string(test1)
-              << "   answer=" << quotient(test1, test2) << std::endl;
+              << "   answer=" << quotient(test2, test1) << std::endl;
 }
