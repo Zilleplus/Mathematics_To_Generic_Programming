@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Integer	.\chapter3.cpp	7;"	d	file:
+RandomAccessIterator	.\chapter3.cpp	6;"	d	file:
+bool_to_string	.\chapter3.cpp	/^std::string bool_to_string(bool x) {$/;"	f
+half	.\chapter2.cpp	/^int half(int n){$/;"	f
+main	.\chapter2.cpp	/^int main()$/;"	f
+main	.\chapter3.cpp	/^int main() {$/;"	f
+main	.\test.cpp	/^int  main()$/;"	f
+mark_sieve	.\chapter3.cpp	/^void mark_sieve(I first, I last, N factor) {$/;"	f
+mult_acc0	.\chapter2.cpp	/^int mult_acc0(int r, int n,int a){ $/;"	f
+mult_acc1	.\chapter2.cpp	/^int mult_acc1(int r, int n,int a){ $/;"	f
+mult_acc2	.\chapter2.cpp	/^int mult_acc2(int r, int n,int a){ $/;"	f
+mult_acc3	.\chapter2.cpp	/^int mult_acc3(int r, int n,int a){ $/;"	f
+mult_acc4	.\chapter2.cpp	/^int mult_acc4(int r, int n,int a){ $/;"	f
+multiply	.\chapter2.cpp	/^int multiply(int n, int a){$/;"	f
+odd	.\chapter2.cpp	/^bool odd(int n){$/;"	f
+print_primes	.\chapter3.cpp	/^void print_primes(I first, N n, N step_size) {$/;"	f
+sift0	.\chapter3.cpp	/^void sift0(I first, N n) {$/;"	f
+sift1	.\chapter3.cpp	/^void sift1(I first, N n) {$/;"	f

@@ -145,15 +145,15 @@ line_segment remainder_fibonacci(line_segment a, line_segment b) {
     if (a < b) return a;
     line_segment c = b;
     do {
-        line_segment temp = c;
+        line_segment tmp = c;
         c = b + c;
         b = tmp;
-    } while (a > = c);
+    } while (a >= c);
     do {
-        if (a <= b) {
+        if (a >= b) {
             a = a - b;
         }
-        line_segment tmp = c = b;
+        line_segment tmp = c - b;
         c = b;
         b = tmp;
     } while (b < c);
@@ -169,7 +169,7 @@ line_segment gcm_remainder(line_segment a, line_segment b){
     return a;
 }
 
-line_segment gcm(integer a, integer b){
+line_segment gcm_fastest(integer a, integer b){
     while(b!=integer(0)){
         a = a % b;
         std::swap(a,b);
@@ -196,6 +196,9 @@ int main() {
     std::cout << "gcm remainder: " << std::to_string(test2) << " mod "
               << std::to_string(test1) << " = "
               << std::to_string(remainder(test2, test1)) << std::endl;
+    std::cout << "remainer fib remainder: " << std::to_string(test2) << " mod "
+              << std::to_string(test1) << " = "
+              << std::to_string(remainder_fibonacci(730, 37)) << std::endl;
     std::cout << "quotient a=" << std::to_string(test2)
               << " b=" << std::to_string(test1)
               << "   answer=" << quotient(test2, test1) << std::endl;
